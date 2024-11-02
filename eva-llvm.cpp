@@ -3,18 +3,15 @@
 int main()
 {
     std::string program = R"(
-        (var x 42)
+        (var z 32)
+        (var x (* z 10))
 
-        (begin
-            (var (x string) "Hello")
-            (printf "Value: %s\n\n" x)
-        )
-
-        (printf "Value: %d\n\n" x)
-
-        (set x 100)
-
-        (printf "Value: %d\n\n" x)
+        // (if (== x 42)
+        //     (set x 100)
+        //     (set x 200)
+        // )   
+        (printf "X: %d\n" x)
+        (printf "X > 320?: %d\n" (> x 320))
     )";
 
     EvaLLVM vm;
